@@ -1,0 +1,19 @@
+@use "sass:map";
+
+$color:(
+    black:#252526,
+    white:#F5F5F5,
+    yellow:#EFE2C0,
+    deepYellow:#E6A649,
+    orange:#F07145,
+    ttiffany:#66BAB7,
+    pick:#FFDBCF,
+    perple:#A0A3C9,
+    green:#C7CD9D,
+    
+    deepYellow-hover:#F07145,
+    ttiffany-hover:#A0A3C9,
+    pick-hover:#F5F5F5,
+    orange-hover:#E6A649,
+    green-hover:#EFE2C0,
+)

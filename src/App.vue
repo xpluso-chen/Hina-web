@@ -1,14 +1,27 @@
 <template>
-  
-  <Test class="logo">
-</Test>
 
-<div >
-  <Test2 />
-</div>
-<div>
-  <Test3 />
-</div>
+  <Test />
+
+  <div>
+    <Test2 />
+  </div>
+  <div>
+    <Test3 />
+  </div>
+
+  <div class="parent">
+    <div class="left-area">1</div>
+    <div class="right-area">2</div>
+    <div class="main-area-hander a">
+      <p>留白</p>
+    </div>
+    <div class="main-area-content">
+      <Test2 /><button class="btn1">123151</button>
+    </div>
+    <div class="main-area-footer">留白</div>
+  </div>
+
+ 
 
 </template>
 
@@ -22,16 +35,17 @@ import Test3 from './components/joke.vue'
 
 <style lang="scss" scoped>
 @use "sass:map";
-.logo {
-  border-radius: 50%;
-  background-color: map.get($color, deepYellow );
-  width: 300px;
-  height: 300px;
-  color: map-get($color, black);
+
+.a {
+  // 貼底
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
-.logo2{
-  width: 600px;
-  height: 600px;
-  @extend %flex-center;
+.btn1{
+  // 飄出去
+  position: absolute;
+  top: -100px;
+  left: -100px;
 }
 </style>

@@ -24,6 +24,16 @@
         <button class="btn2" ref="btn2" @click="toggleClass"><span>我是首頁按鈕2號</span></button>
       </div>
 
+      <button 
+    v-for="(text, index) in ['我是首頁按鈕1', '我是首頁按鈕2']" 
+    :key="index" 
+    class="btn1 m-5" 
+    :class="{ active: activeIndex === index }" 
+    @click="setActive(index)"
+  >
+    <span>{{ text }}</span>
+  </button>
+
     </div>
     <div class="main-area-footer">留白</div>
   </div>
@@ -44,17 +54,25 @@ function toggleClass() {
     }
   });
 }
+
+const activeIndex = ref(null); // 用來存儲目前點擊的按鈕索引
+
+const setActive = (index) => {
+  activeIndex.value = index; // 更新目前點擊的按鈕索引
+};
 </script>
 
 <style lang="scss">
 @use "sass:map";
-
+.m-5{
+ margin: 20px;
+}
 .a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-
+ 
 .btn1 {
   position: relative;
   outline: none;

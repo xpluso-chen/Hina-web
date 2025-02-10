@@ -1,4 +1,41 @@
 @use "sass:map";
 @use "./variables" as *;
+@use "./animations" as *;
 
+@mixin btn-style($bg-color, $hover-bg-color) {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 60px;
+    width: 210px;
+    opacity: 1;
+    background-color: $bg-color;
+    border: 2px solid map-get($color, black);
 
+    &:hover {
+        animation: rotate 0.7s ease-in-out both;
+        background-color: $hover-bg-color;
+
+        span {
+            animation: storm 0.7s ease-in-out both;
+            animation-delay: 0.06s;
+        }
+    }
+
+    span {
+        color: map-get($color, black);
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+}
+
+.btn {
+    @include btn-style(#ff4343, #333);
+}

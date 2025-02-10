@@ -27,7 +27,7 @@
       <button 
     v-for="(text, index) in ['我是首頁按鈕1', '我是首頁按鈕2']" 
     :key="index" 
-    class="btn1 m-5" 
+    class="btn m-5" 
     :class="{ active: activeIndex === index }" 
     @click="setActive(index)"
   >
@@ -62,8 +62,9 @@ const setActive = (index) => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "sass:map";
+
 .m-5{
  margin: 20px;
 }
@@ -73,53 +74,9 @@ const setActive = (index) => {
   justify-content: flex-end;
 }
  
-.btn1 {
-  position: relative;
-  outline: none;
-  text-decoration: none;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  height: 60px;
-  width: 210px;
-  opacity: 1;
-  background-color: #ffffff;
-  border: 2px solid map.get($color, black);
-
-  &:hover {
-    animation: rotate 0.7s ease-in-out both;
-    @keyframes rotate {
-      0% { transform: rotate(0deg) translate3d(0, 0, 0); }
-      25% { transform: rotate(3deg) translate3d(0, 0, 0); }
-      50% { transform: rotate(-3deg) translate3d(0, 0, 0); }
-      75% { transform: rotate(1deg) translate3d(0, 0, 0); }
-      100% { transform: rotate(0deg) translate3d(0, 0, 0); }
-    }
-  }
-
-  span {
-    color: map.get($color, black);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-
-    &:hover {
-      animation: storm 0.7s ease-in-out both;
-      animation-delay: 0.06s;
-
-      @keyframes storm {
-        0% { transform: translate3d(0, 0, 0) translateZ(0); }
-        25% { transform: translate3d(4px, 0, 0) translateZ(0); }
-        50% { transform: translate3d(-3px, 0, 0) translateZ(0); }
-        75% { transform: translate3d(2px, 0, 0) translateZ(0); }
-        100% { transform: translate3d(0, 0, 0) translateZ(0); }
-      }
-    }
-  }
-}
+// .btn1{
+//     @include btn-style(#4446cb, #333);
+// }
 
 .active {
   background-color: red;

@@ -16,4 +16,31 @@ $color:(
     pick-hover:#F5F5F5,
     orange-hover:#E6A649,
     green-hover:#EFE2C0,
-)
+);
+
+$interval: (
+    // 間距
+    s:8px,
+    m:20px,
+    l:40px,
+);
+
+
+$font-size: (
+    title-m:1.25rem,
+    title-l:2rem,
+    title-xl:4rem,
+
+    btn-txt-m:1rem,
+    btn-txt-l:1.25rem,
+
+    content-m:1rem,
+    content-l:1.5rem,
+    content-xl:2rem,
+    
+    //1rem約16px
+    //1.25rem約20px
+    //1.5rem約24px
+    //2rem約32px
+    //4rem約64px
+);

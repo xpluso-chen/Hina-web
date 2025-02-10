@@ -2,6 +2,8 @@
 @use "./reset" as *;
 @use "./variables" as *;
 @use "./mixins" as *;
+@use"./extend.scss" as *;
+@use"./animations.scss" as *;
 
 @use "./buttons" as *;
 @use "./component" as *;

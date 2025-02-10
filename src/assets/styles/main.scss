@@ -7,63 +7,72 @@
 @use "./component" as *;
 
 .a {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .btn1{
-    position: absolute;
-    top: -100px;
-    left: -100px;
-  }
-  
-  .parent {
-    display: grid;
-    height: 100vh; /* 確保高度充足 */
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
-  }
-  /* 左側裝飾區 */
-  .left-area {
-    background-color: map.get($color, deepYellow);
-    grid-row: span 3 / span 3;
-  }
-  
-  /* 右側裝飾區 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+
+.parent {
+  display: grid;
+  height: 100vh;
+  /* 確保高度充足 */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+}
+
+/* 左側裝飾區 */
+.left-area {
+  background-color: map.get($color, deepYellow);
+  grid-row: span 3 / span 3;
+}
+
+/* 右側裝飾區 */
+.right-area {
+  background-color: map.get($color, deepYellow);
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.main-area-hander {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.main-area-content {
+  position: relative;
+  grid-column-start: 2;
+}
+
+.main-area-footer {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+@media (max-width: 768px) {
+
+  /* 手機板 */
+  .left-area,
   .right-area {
-    background-color: map.get($color, deepYellow);
-    grid-row: span 3 / span 3;
-    grid-column-start: 3;
-    grid-row-start: 1;
+    display: none;
   }
-  
-  .main-area-hander {
-    grid-column-start: 2;
-    grid-row-start: 1;
+
+  .parent {
+    grid-template-columns: 1fr;
+    /* 變成單欄 */
+    grid-template-rows: repeat(3, auto);
+    /* 三行自適應 */
   }
-  
-  .main-area-content {
-    position: relative;
-    grid-column-start: 2;
-  }
-  
+
+  .main-area-hander,
+  .main-area-content,
   .main-area-footer {
-    grid-column-start: 2;
-    grid-row-start: 3;
+    grid-column: 1;
+    /* 讓內容都佔滿 */
+    grid-row: auto;
+    /* 自動排列 */
   }
-  @media (max-width: 768px) { /* 手機板 */
-      .left-area, .right-area {
-          display: none;
-      }
-  
-      .parent {
-          grid-template-columns: 1fr; /* 變成單欄 */
-          grid-template-rows: repeat(3, auto); /* 三行自適應 */
-      }
-  
-      .main-area-hander, .main-area-content, .main-area-footer {
-          grid-column: 1; /* 讓內容都佔滿 */
-          grid-row: auto; /* 自動排列 */
-      }
-  }
+}

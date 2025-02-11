@@ -37,8 +37,9 @@
     <div class="main-area-footer">留白</div>
   </div>
 
-  <Button />
-  <Button />
+  <Button bgColor="#4d91ff" hoverColor="#000" text="123"/>
+  <Button bgColor="#ffb84d" hoverColor="#4d91ff" text="123"/>
+
 </template>
 
 <script setup lang="ts">

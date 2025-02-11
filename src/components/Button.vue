@@ -1,8 +1,8 @@
 <template>
     <div class="btn-box">
       <button 
-        class="btn2"
-        ref="btn2"
+        class="btn"
+        ref="btn"
         :style="{ '--bg-color': bgColor, '--hover-color': hoverColor }"
         @click="toggleClass"
       >
@@ -15,25 +15,25 @@
   <script setup lang="ts">
   import { ref, nextTick, defineProps } from 'vue';
   
-  const props = defineProps({
+   defineProps({
     bgColor: { type: String},
     hoverColor: { type: String },
     text:{type: String }
   });
   
-  const btn2 = ref<HTMLElement | null>(null);
+  const btn = ref<HTMLElement | null>(null);
   
   function toggleClass() {
     nextTick(() => {
-      if (btn2.value) {
-        btn2.value.classList.toggle('active');
+      if (btn.value) {
+        btn.value.classList.toggle('active');
       }
     });
   }
   </script>
   
   <style lang="scss" scoped>
-  .btn2 {
+  .btn {
     @include btn-style(var(--bg-color), var(--hover-color));
   }
   
@@ -46,9 +46,6 @@
     }
   }
   
-  .active {
-    background-color: red !important;
-    color: yellow !important;
-  }
+  
   </style>
   

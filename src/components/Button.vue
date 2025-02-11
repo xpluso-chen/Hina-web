@@ -1,5 +1,6 @@
 <template>
     <div class="btn-box">
+        <img class="handOnleft-img" :src="imgSrc" alt="裝飾左邊用的手">
       <button 
         class="btn"
         ref="btn"
@@ -8,7 +9,7 @@
       >
         <span>{{text}}</span>
       </button>
-      <img src="/public/hand-l.png" alt="裝飾">
+      <img class="handOnRight-img" :src="imgSrc" alt="裝飾右邊用的手">
     </div>
   </template>
   
@@ -18,7 +19,8 @@
    defineProps({
     bgColor: { type: String},
     hoverColor: { type: String },
-    text:{type: String }
+    text:{type: String },
+    imgSrc:{type: String }
   });
   
   const btn = ref<HTMLElement | null>(null);

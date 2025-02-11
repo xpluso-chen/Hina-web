@@ -40,11 +40,33 @@
 // 按鈕效果->點擊會晃動
 .active {
     animation: rotate 0.7s ease-in-out both;
+
     span {
         animation: storm 0.7s ease-in-out both;
         animation-delay: 0.06s;
     }
-  }
+}
 
 
 
+// 只留在圖片左邊的手
+.handOnleft {
+    .handOnRight-img {
+        // 在圖片右邊的手消失
+        display: none;
+    }
+    img {
+        animation: moveLeftAndRight 1.2s ease-in-out infinite;
+    }
+}
+
+// 只留在圖片右邊的手
+.handOnRight {
+    // 在圖片左邊的手消失
+    .handOnleft-img {
+        display: none;
+    }
+    img {
+        animation: moveRightAndLeft 1.2s ease-in-out infinite;
+    }
+}

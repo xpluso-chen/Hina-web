@@ -42,3 +42,32 @@
         transform: translate3d(0, 0, 0) translateZ(0);
     }
 }
+
+//手指圖片戳戳-左
+@keyframes moveRightAndLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+//手指圖片戳戳-右
+@keyframes moveLeftAndRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-15px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

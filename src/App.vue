@@ -6,15 +6,12 @@
       <p>標題</p>
     </div>
     <div class="main-area-content">
-      <Button bgColor="#4d91ff" hoverColor="#000" text="我覺得天氣有點熱" />
-      <Button bgColor="#ffb84d" hoverColor="#4d91ff" text="我覺得天氣有點冷" />
-      <Button bgColor="#4d91ff" hoverColor="#000" text="我覺得肚子餓了" />
+      <Button bgColor="#ffb84d" hoverColor="#4d91ff" text="我覺得天氣有點熱" imgSrc="/hand-l.png" class="handOnRight"/>
+      <Button bgColor="#ffb84d" hoverColor="#4d91ff" text="我覺得天氣有點冷" imgSrc="/hand-l.png" class="handOnRight"/>
+      <Button bgColor="#4d91ff" hoverColor="#000" text="我覺得肚子餓了" imgSrc="/hand-r.png" class="handOnleft"/>
     </div>
     <div class="main-area-footer">留白</div>
   </div>
-
-
-
 </template>
 
 <script setup lang="ts">

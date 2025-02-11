@@ -22,21 +22,23 @@
       <div class="btn-box">
         <!-- 使用 ref 綁定到這個按鈕元素 -->
         <button class="btn2" ref="btn2" @click="toggleClass"><span>我是首頁按鈕2號</span></button>
+        <img src="../public/hand-l.png" alt="裝飾">
       </div>
-
-      <button 
-    v-for="(text, index) in ['我是首頁按鈕1', '我是首頁按鈕2']" 
-    :key="index" 
-    class="btn m-5" 
-    :class="{ active: activeIndex === index }" 
-    @click="setActive(index)"
-  >
-    <span>{{ text }}</span>
-  </button>
+      <div class="btn-box">
+        <button v-for="(text, index) in ['我是首頁按鈕1', '我是首頁按鈕2']" :key="index" class="btn m-5"
+          :class="{ active: activeIndex === index }" @click="setActive(index)">
+          <span>{{ text }}</span>
+        </button>
+        <img src="../public/hand-l.png" alt="裝飾">
+        <img src="../public/hand-r.png" alt="裝飾">
+      </div>
 
     </div>
     <div class="main-area-footer">留白</div>
   </div>
+
+  <Button />
+  <Button />
 </template>
 
 <script setup lang="ts">
@@ -44,6 +46,7 @@ import { ref, nextTick } from 'vue';
 import Test from './components/api.vue';
 import Test2 from './components/motto.vue';
 import Test3 from './components/joke.vue';
+import Button from './components/Button.vue';
 
 const btn2 = ref<HTMLElement | null>(null);
 
@@ -65,18 +68,28 @@ const setActive = (index) => {
 <style lang="scss" scoped>
 @use "sass:map";
 
-.m-5{
- margin: 20px;
+.m-5 {
+  margin: 20px;
 }
+
 .a {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
- 
-// .btn1{
-//     @include btn-style(#4446cb, #333);
-// }
+
+.btn2 {
+  @include btn-style(#4446cb, #333);
+}
+
+.btn-box {
+  @extend %flex-center;
+  align-items: center;
+  img{
+    width: auto;
+    height: 36px;
+  }
+}
 
 .active {
   background-color: red;

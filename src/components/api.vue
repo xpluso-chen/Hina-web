@@ -128,7 +128,7 @@ onMounted(() => {
             (error) => {
                 console.error('無法取得位置：', error);
                 countyName.value = '無法取得您的位置。';
-                alert('無法找到離您最近的氣象測站資料，請開啟允許定位。')
+                alert('無法找到離您最近的氣象測站資料，請開啟允許定位及網路。')
             }
         );
     } else {

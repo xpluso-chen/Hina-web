@@ -8,7 +8,7 @@
 @use "./buttons" as *;
 @use "./component" as *;
 
-.a {
+.column-down {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -16,7 +16,7 @@
 
 
 
-.parent {
+section {
   display: grid;
   height: 100vh;
   /* 確保高度充足 */

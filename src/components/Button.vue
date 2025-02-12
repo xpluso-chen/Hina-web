@@ -40,11 +40,11 @@
   }
   
   .btn-box {
-    @extend %flex-center;
+    display: flex;
     align-items: center;
     img {
       width: auto;
-      height: 36px;
+      height: 32px;
     }
   }
   

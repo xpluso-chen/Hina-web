@@ -2,7 +2,6 @@
 @use "./variables" as *;
 
 %flex-center{
-    background-color: map.get($color, bg-deepYellow );
     display: flex;
     flex-direction: row;
     justify-content: center;

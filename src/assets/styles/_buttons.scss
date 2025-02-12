@@ -70,3 +70,12 @@
         animation: moveRightAndLeft 1.2s ease-in-out infinite;
     }
 }
+//無手版
+.nohands{
+    .handOnleft-img {
+        display: none;
+    }
+    .handOnRight-img {
+        display: none;
+    }
+}

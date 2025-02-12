@@ -14,7 +14,7 @@
 
       <div class="content-box">
         <CountyTemperature id="countyTemperature" />
-        <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱" imgSrc="/hand-r.png"
+        <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱" imgSrc="/Hina-web/hand-r.png"
           class="handOnRight" />
         <Button id="btn2" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
           imgSrc="/hand-r.png" class="handOnRight" />

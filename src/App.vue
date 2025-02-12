@@ -17,9 +17,9 @@
         <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱" imgSrc="/Hina-web/hand-r.png"
           class="handOnRight" />
         <Button id="btn2" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
-          imgSrc="/hand-r.png" class="handOnRight" />
+          imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
         <Button id="btn3" :bgColor="colorMap.green" :hoverColor="colorMap.greenHover" text="我覺得肚子餓了"
-          imgSrc="/hand-l.png" class="handOnleft" />
+          imgSrc="/Hina-web/hand-l.png" class="handOnleft" />
       </div>
     </div>
     <div class="main-area-footer">

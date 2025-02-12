@@ -69,7 +69,7 @@ const findClosestStation = async (userLat: number, userLon: number) => {
 
 // 找到最近的縣市
 const findClosestPosition = async (userLat: number, userLon: number) => {
-    const url = '/json/position.json';
+    const url = '/Hina-web/json/position.json';
 
     try {
         const response = await fetch(url);

@@ -1,4 +1,9 @@
 @use "sass:map";
-.logo2{
-    color: rgb(0, 21, 255);
+@use "./variables" as *;
+@mixin title-style($text-color){
+    color: $text-color;
+    font-weight: map-get($font-weight , blod);
+    font-size: map-get($font-size, title-m);
+    letter-spacing: 0.2rem;
+    @extend %text-outline-stroke;
 }

@@ -44,6 +44,7 @@ section {
 
 .main-area-content {
   width: 400px;
+  @extend %flex-column-center;
   position: relative;
   grid-column-start: 2;
 }

@@ -15,7 +15,7 @@
 }
 
 .flex-column-center {
-  @extend %flex-column-center
+  @extend %flex-column-center;
 }
 
 %column-down {
@@ -32,4 +32,13 @@
 
 %letter-spacing {
   letter-spacing: 2px;
+}
+
+%text-outline-stroke {
+  -webkit-text-stroke: 0.5px black;
+  text-shadow:
+    -0.5px -0.5px 0 black,
+    0.5px -0.5px 0 black,
+    -0.5px 0.5px 0 black,
+    0.5px 0.5px 0 black;
 }

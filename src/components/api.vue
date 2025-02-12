@@ -151,7 +151,8 @@ onMounted(() => {
         letter-spacing: 0.5rem !important;
         span {
             font-weight: map-get($font-weight , normal);
-            font-size: map.get($font-size, title-m);
+            // font-size: map.get($font-size, title-m);
+            font-size: 21px;
         }
 
         #temperature {

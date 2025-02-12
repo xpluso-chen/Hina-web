@@ -10,12 +10,12 @@
       </div>
 
     </div>
-    <div class="main-area-content flex-column-center">
+    <div class="main-area-content">
 
       <div class="content-box">
         <CountyTemperature id="countyTemperature" />
-        <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱" imgSrc="/Hina-web/hand-r.png"
-          class="handOnRight" />
+        <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱"
+          imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
         <Button id="btn2" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
           imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
         <Button id="btn3" :bgColor="colorMap.green" :hoverColor="colorMap.greenHover" text="我覺得肚子餓了"
@@ -30,9 +30,9 @@
   <section id="joke-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
-    <div class="main-area-hander flex-column-end">
+    <div class="main-area-hander">
       <!-- 標題 -->
-      <p>標題</p>
+      <p>標題標題標題標題標題標題標題標題</p>
     </div>
     <div class="main-area-content">
 
@@ -41,7 +41,37 @@
       <!-- 留白用 -->
     </div>
   </section>
-  
+
+  <section id="motto-page">
+    <div class="left-area"></div>
+    <div class="right-area"></div>
+    <div class="main-area-hander">
+      <!-- 標題 -->
+      <p>標題標題標題標題標題標題標題標題</p>
+    </div>
+    <div class="main-area-content">
+
+    </div>
+    <div class="main-area-footer">
+      <!-- 留白用 -->
+    </div>
+  </section>
+
+  <section id="eat-page">
+    <div class="left-area"></div>
+    <div class="right-area"></div>
+    <div class="main-area-hander">
+      <!-- 標題 -->
+      <p>標題標題標題標題標題標題標題標題</p>
+    </div>
+    <div class="main-area-content">
+
+    </div>
+    <div class="main-area-footer">
+      <!-- 留白用 -->
+    </div>
+  </section>
+
 </template>
 
 <script setup lang="ts">
@@ -112,7 +142,7 @@ const updateTime = () => {
       bottom: -60px;
       left: -50px;
     }
-    
+
     // 手機版->不邊角圓,不填色
     @media (max-width: 768px) {
       width: 100%;
@@ -120,14 +150,36 @@ const updateTime = () => {
       padding: 0 0;
       background-color: unset;
       border-radius: unset;
-      #btn1,#btn2,#btn3{
+
+      #btn1,
+      #btn2,
+      #btn3 {
         position: unset;
       }
     }
 
   }
 }
-#joke-page{
-  
+
+#joke-page {
+  .main-area-hander {
+    p {
+      @include title-style(map.get($color, orange));
+    }
+  }
+}
+#motto-page {
+  .main-area-hander {
+    p {
+      @include title-style(map.get($color, ttiffany));
+    }
+  }
+}
+#eat-page {
+  .main-area-hander {
+    p {
+      @include title-style(map.get($color, yellow));
+    }
+  }
 }
 </style>

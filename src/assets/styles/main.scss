@@ -8,12 +8,6 @@
 @use "./buttons" as *;
 @use "./component" as *;
 
-.column-down {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
 
 
 section {
@@ -40,6 +34,8 @@ section {
 }
 
 .main-area-hander {
+  // 統一貼地
+  @extend %column-down;
   grid-column-start: 2;
   grid-row-start: 1;
 }
@@ -62,19 +58,11 @@ section {
     display: none;
   }
 
-  .parent {
-    grid-template-columns: 1fr;
-    /* 變成單欄 */
+  section {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    /* 三行自適應 */
-  }
-
-  .main-area-hander,
-  .main-area-content,
-  .main-area-footer {
-    grid-column: 1;
-    /* 讓內容都佔滿 */
-    grid-row: auto;
-    /* 自動排列 */
+    gap: 8px;
   }
 }

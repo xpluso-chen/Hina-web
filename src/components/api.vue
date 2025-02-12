@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <div>
+    <div id="countyTemperature">
+        <div id="api-box">
             <span>現在天氣</span>
-            <span>{{ airTemperature }}</span>
+            <span id="temperature">{{ airTemperature }}</span>
             <span>°C</span>
         </div>
         <hr>
-        <div>{{ countyName }}</div>
+        <div id="countyName">{{ countyName }}</div>
     </div>
 
 </template>
@@ -137,4 +137,37 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use "sass:map";
+
+#countyTemperature {
+    width: 240px;
+    margin: map.get($interval, m) 0;
+
+    #api-box {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+        letter-spacing: 0.5rem !important;
+        span {
+            font-weight: map-get($font-weight , normal);
+            font-size: map.get($font-size, title-m);
+        }
+
+        #temperature {
+            font-weight: map-get($font-weight , blod);
+            font-size: map-get($font-size, title-xl);
+        }
+    }
+
+    hr {
+        border: map.get($color, black) 1px solid;
+    }
+
+    #countyName {
+        @extend %letter-spacing;
+        font-weight: map-get($font-weight , normal);
+        font-size: map-get($font-size, title-m);
+    }
+}
+</style>

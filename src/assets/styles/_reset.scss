@@ -1,4 +1,5 @@
 @use "sass:map";
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +11,9 @@
 /* 重置字體 */
 body {
     font-family:
-        /*西文*/
+        /*英文*/
+        "Zen Kaku Gothic New", 
+        serif,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",

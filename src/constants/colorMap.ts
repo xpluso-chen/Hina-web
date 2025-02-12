@@ -13,6 +13,6 @@ export const colorMap = {
     ttiffanyHover:"#A0A3C9",
     pinkHover:"#F5F5F5",
     orangeHover:"#E6A649",
-    greenHover:"#EFE2C0"
+    greenHover:"#E6A649"
   };
   

@@ -1,30 +1,35 @@
 @use "sass:map";
 @use "./variables" as *;
 
-%flex-center{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+%flex-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-%flex-column-center{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.flex-column-center{
+
+.flex-column-center {
   @extend %flex-column-center
 }
 
-%column-down{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+%column-down {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
-  %letter-spacing{
-    letter-spacing: 2px;
-  }
+%column-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
-  
+%letter-spacing {
+  letter-spacing: 2px;
+}

@@ -27,7 +27,7 @@
     </div>
   </section>
 
-  <section id="index-page">
+  <section id="joke-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
     <div class="main-area-hander flex-column-end">
@@ -87,7 +87,10 @@ const updateTime = () => {
     width: 400px;
     height: 400px;
     position: relative;
-    padding: map.get($interval, xl) 0;
+    background-color: #EFE2C0;
+    border-radius: 50%;
+    padding-top: map.get($interval, l);
+    padding-bottom: map.get($interval, xl);
     background-color: map.get($color, yellow);
     border-radius: 50%;
     @extend %flex-column-center;
@@ -114,7 +117,7 @@ const updateTime = () => {
     @media (max-width: 768px) {
       width: 100%;
       height: auto;
-      padding: map.get($interval, m) 0;
+      padding: 0 0;
       background-color: unset;
       border-radius: unset;
       #btn1,#btn2,#btn3{
@@ -123,5 +126,8 @@ const updateTime = () => {
     }
 
   }
+}
+#joke-page{
+  
 }
 </style>

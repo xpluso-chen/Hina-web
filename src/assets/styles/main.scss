@@ -35,26 +35,32 @@ section {
 
 .main-area-hander {
   // 統一貼地
+  width: 400px;
   @extend %column-down;
   grid-column-start: 2;
   grid-row-start: 1;
+  background-color: antiquewhite;
 }
 
 .main-area-content {
+  width: 400px;
   position: relative;
   grid-column-start: 2;
 }
 
 .main-area-footer {
+  width: 400px;
   grid-column-start: 2;
   grid-row-start: 3;
+  background-color:aqua
 }
 
 @media (max-width: 768px) {
 
   /* 手機板 */
   .left-area,
-  .right-area {
+  .right-area,
+  .main-area-footer {
     display: none;
   }
 

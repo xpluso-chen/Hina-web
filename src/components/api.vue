@@ -148,11 +148,10 @@ onMounted(() => {
         display: flex;
         align-items: baseline;
         justify-content: space-around;
-        letter-spacing: 0.5rem !important;
+        letter-spacing: 0.4rem !important;
         span {
             font-weight: map-get($font-weight , normal);
-            // font-size: map.get($font-size, title-m);
-            font-size: 21px;
+            font-size: map.get($font-size, title-m);
         }
 
         #temperature {

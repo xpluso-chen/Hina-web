@@ -1,21 +1,24 @@
 <template>
-  <div class="btn-box">
+  <a class="btn-box" :href="link">
     <img class="handOnleft-img" :src="imgSrc" alt="裝飾左邊用的手">
     <button class="btn" ref="btn" :style="{ '--bg-color': bgColor, '--hover-color': hoverColor }" @click="toggleClass">
       <span>{{ text }}</span>
     </button>
     <img class="handOnRight-img" :src="imgSrc" alt="裝飾右邊用的手">
-  </div>
+  </a>
 </template>
 
 <script setup lang="ts">
 import { ref, nextTick, defineProps } from 'vue';
 
-defineProps({
-  bgColor: { type: String },
-  hoverColor: { type: String },
-  text: { type: String },
-  imgSrc: { type: String }
+withDefaults(defineProps<{
+  link?: string;
+  bgColor?: string;
+  hoverColor?: string;
+  text?: string;
+  imgSrc?: string;
+}>(), {
+  link: "#"
 });
 
 const btn = ref<HTMLElement | null>(null);

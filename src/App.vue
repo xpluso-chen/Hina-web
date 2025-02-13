@@ -14,11 +14,12 @@
 
       <div class="content-box">
         <CountyTemperature id="countyTemperature" />
-        <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱"
+        <Button id="btn1" link="#joke-page" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱"
           imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
-        <Button id="btn2" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
+        
+        <Button id="btn2" link="#motto-page" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
           imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
-        <Button id="btn3" :bgColor="colorMap.green" :hoverColor="colorMap.greenHover" text="我覺得肚子餓了"
+        <Button id="btn3" link="#eat-page" :bgColor="colorMap.green" :hoverColor="colorMap.greenHover" text="我覺得肚子餓了"
           imgSrc="/Hina-web/hand-l.png" class="handOnleft" />
       </div>
     </div>
@@ -83,7 +84,8 @@
     <div class="right-area"></div>
     <div class="main-area-hander">
       <!-- 標題 -->
-      <p>標題標題標題標題標題標題標題標題</p>
+      <span>肚子餓了嗎?</span>
+      <span>幫你想一下吃什麼</span>
     </div>
     <div class="main-area-content">
 

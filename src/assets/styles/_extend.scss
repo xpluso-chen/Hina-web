@@ -18,6 +18,13 @@
   @extend %flex-column-center;
 }
 
+%flex-column-left {
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 %column-down {
   display: flex;
   flex-direction: column;
@@ -35,10 +42,11 @@
 }
 
 %text-outline-stroke {
-  -webkit-text-stroke: 0.5px black;
+  // -webkit-text-stroke: 0.5px map-get($color , black);
+  // text-stroke: 0.5px map-get($color , black);
   text-shadow:
-    -0.5px -0.5px 0 black,
-    0.5px -0.5px 0 black,
-    -0.5px 0.5px 0 black,
-    0.5px 0.5px 0 black;
-}
+  -1px -1px 0 map-get($color , black),  
+     1px -1px 0 map-get($color , black),  
+    -1px  1px 0 map-get($color , black),  
+     1px  1px 0 map-get($color , black); /* 四個方向的黑色陰影 */
+    }

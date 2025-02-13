@@ -33,34 +33,28 @@
     <div class="right-area"></div>
     <div class="main-area-hander">
       <!-- 標題 -->
-      <p>標題標題標題標題標題標題標題標題</p>
+      <span>天氣有點熱嗎?</span>
+      <span>講個冷笑話讓你涼快一下</span>
+
     </div>
     <div class="main-area-content">
       <div class="dialog">
         <!-- 綁定 Joke.vue，讓它可以被控制 -->
         <Joke ref="jokeComponent" />
       </div>
-      <button @click="jokeAgain">不夠冷，再一個！</button>
+      <div class="againBtn">
+        <!-- <button @click="jokeAgain">不夠冷，再一個！</button> -->
+        <Button @click="jokeAgain" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="不夠冷，再一個！"
+          imgSrc="/Hina-web/hand-r.png" class="nohands" />
+      </div>
     </div>
     <div class="main-area-footer">
       <!-- 留白用 -->
-       <p>おなかがすいた</p>
     </div>
   </section>
 
   <section id="motto-page">
-    <div class="left-area"></div>
-    <div class="right-area"></div>
-    <div class="main-area-hander">
-      <!-- 標題 -->
-      <p>標題標題標題標題標題標題標題標題</p>
-    </div>
-    <div class="main-area-content">
-
-    </div>
-    <div class="main-area-footer">
-      <!-- 留白用 -->
-    </div>
+    
   </section>
 
   <section id="eat-page">
@@ -83,7 +77,7 @@
 <script setup lang="ts">
 import { colorMap } from './constants/colorMap';
 import CountyTemperature from './components/api.vue';
-// import Motto from './components/motto.vue';
+import Motto from './components/motto.vue';
 import Joke from './components/joke.vue';
 import Button from './components/Button.vue';
 
@@ -99,10 +93,31 @@ const jokeComponent = ref(null);
 function jokeAgain() {
   jokeComponent.value?.jokeAgain();
 }
+
+
+
+
 </script>
 
 <style lang="scss" scoped>
 @use "sass:map";
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  color: map.get($color, black);
+  background-color: map.get($color, white);
+  border: map.get($color, black) 1px solid;
+  border-radius: 20px;
+  margin: map.get($interval, m) 0;
+  // 對標題和按鈕的距離
+  padding: map.get($interval, m);
+  // 左右對齊標題
+}
+.againBtn{
+  padding: 0 map.get($interval, m);
+  // 左右對齊標題
+}
 
 #index-page {
   .main-area-hander {
@@ -176,24 +191,20 @@ function jokeAgain() {
 
 #joke-page {
   .main-area-hander {
-    p {
+    span {
+      /* 設置文字描邊*/
+      @extend %text-outline-stroke;
       @include title-style(map.get($color, orange));
     }
   }
 
-  .dialog {
-    width: 600px;
-    height: 100%;
-    color: map.get($color, black);
-    background-color: map.get($color, white);
-    border: map.get($color, black) 1px solid;
-    border-radius: 20px;
-  }
 }
 
 #motto-page {
   .main-area-hander {
-    p {
+    span {
+      /* 設置文字描邊*/
+      @extend %text-outline-stroke;
       @include title-style(map.get($color, ttiffany));
     }
   }
@@ -201,7 +212,9 @@ function jokeAgain() {
 
 #eat-page {
   .main-area-hander {
-    p {
+    span {
+      /* 設置文字描邊*/
+      @extend %text-outline-stroke;
       @include title-style(map.get($color, yellow));
     }
   }

@@ -46,7 +46,7 @@ section {
 
 .main-area-content {
   width: 600px;
-  @extend %flex-column-center;
+  @extend %flex-column-left;
   position: relative;
   grid-column-start: 2;
 }
@@ -76,6 +76,8 @@ section {
   }
   .main-area-hander {
     width: 400px;
+    padding: 0 map.get($interval, l);
+  // 標題左右對齊.dialog.againBtn
   }
   .main-area-content {
     width: 400px;

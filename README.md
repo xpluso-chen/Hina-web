@@ -7,3 +7,7 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 =======
 # Hina-web
 >>>>>>> 8426e19f0f06430e5a310b3e03c9631d6889ed20
+
+1.字要加框很難加
+2.子組件可以包子組件
+2.設一種按鈕，模式用class去切換

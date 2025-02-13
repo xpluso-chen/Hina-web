@@ -54,7 +54,28 @@
   </section>
 
   <section id="motto-page">
-    
+    <div class="left-area"></div>
+    <div class="right-area"></div>
+    <div class="main-area-hander">
+      <!-- 標題 -->
+      <span>天冷不是冷</span>
+      <span>心灰意冷才是真的冷</span>
+      <span>給你一碗雞湯溫暖一下</span>
+
+    </div>
+    <div class="main-area-content">
+      <div class="dialog">
+        <!-- 綁定 motto.vue，讓它可以被控制 -->
+        <Motto ref="mottoComponent" />
+      </div>
+      <div class="againBtn">
+        <Button @click="mottoAgain" :bgColor="colorMap.orange" :hoverColor="colorMap.orangeHover" text="我需要再一碗"
+          imgSrc="/Hina-web/hand-r.png" class="nohands" />
+      </div>
+    </div>
+    <div class="main-area-footer">
+      <!-- 留白用 -->
+    </div>
   </section>
 
   <section id="eat-page">
@@ -94,7 +115,11 @@ function jokeAgain() {
   jokeComponent.value?.jokeAgain();
 }
 
-
+// 抓motto.vue的jokeAgain()
+const mottoComponent = ref(null);
+function mottoAgain() {
+  mottoComponent.value?.mottoAgain();
+}
 
 
 </script>

@@ -17,7 +17,6 @@ section {
   /* 確保高度充足 */
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 8px;
 }
 
 /* 左側裝飾區 */
@@ -69,11 +68,8 @@ section {
   }
 
   section {
-    display: grid;
-    height: 100vh;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    gap: 8px;
   }
   .main-area-hander {
     width: calc(400px - map.get($interval, l));

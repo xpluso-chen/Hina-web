@@ -86,9 +86,13 @@
       <!-- 標題 -->
       <span>肚子餓了嗎?</span>
       <span>幫你想一下吃什麼</span>
+      <Button @click="eatAgain" :bgColor="colorMap.orange" :hoverColor="colorMap.orangeHover" text="我需要再一碗"
+          imgSrc="/Hina-web/hand-r.png" class="nohands" />
+     
     </div>
     <div class="main-area-content">
-
+<Eat ref="eatComponent" />
+      
     </div>
     <div class="main-area-footer">
       <!-- 留白用 -->
@@ -102,6 +106,7 @@ import { colorMap } from './constants/colorMap';
 import CountyTemperature from './components/api.vue';
 import Motto from './components/motto.vue';
 import Joke from './components/joke.vue';
+import Eat from './components/eat.vue';
 import Button from './components/Button.vue';
 
 // 抓現在時間
@@ -121,6 +126,11 @@ function jokeAgain() {
 const mottoComponent = ref(null);
 function mottoAgain() {
   mottoComponent.value?.mottoAgain();
+}
+// 抓eat.vue的jokeAgain()
+const eatComponent = ref(null);
+function eatAgain() {
+  eatComponent.value?.eatAgain();
 }
 
 
@@ -166,7 +176,9 @@ function mottoAgain() {
       }
     }
   }
-
+ 
+  .main-area-content{
+ @extend %flex-column-center;
   .content-box {
     // 網頁版->邊角圓,填色
     width: 400px;
@@ -213,6 +225,7 @@ function mottoAgain() {
       }
     }
 
+  }
   }
 }
 

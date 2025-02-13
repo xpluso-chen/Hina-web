@@ -27,6 +27,7 @@
     </div>
   </section>
 
+
   <section id="joke-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
@@ -35,12 +36,15 @@
       <p>標題標題標題標題標題標題標題標題</p>
     </div>
     <div class="main-area-content">
-<div class="dialog">
-
-</div>
+      <div class="dialog">
+        <!-- 綁定 Joke.vue，讓它可以被控制 -->
+        <Joke ref="jokeComponent" />
+      </div>
+      <button @click="jokeAgain">不夠冷，再一個！</button>
     </div>
     <div class="main-area-footer">
       <!-- 留白用 -->
+       <p>おなかがすいた</p>
     </div>
   </section>
 
@@ -80,7 +84,7 @@
 import { colorMap } from './constants/colorMap';
 import CountyTemperature from './components/api.vue';
 // import Motto from './components/motto.vue';
-// import Joke from './components/joke.vue';
+import Joke from './components/joke.vue';
 import Button from './components/Button.vue';
 
 // 抓現在時間
@@ -89,6 +93,12 @@ const now = ref(new Date());
 const updateTime = () => {
   now.value = new Date();
 };
+
+// 抓joke.vue的jokeAgain()
+const jokeComponent = ref(null);
+function jokeAgain() {
+  jokeComponent.value?.jokeAgain();
+}
 </script>
 
 <style lang="scss" scoped>
@@ -170,14 +180,17 @@ const updateTime = () => {
       @include title-style(map.get($color, orange));
     }
   }
-  .dialog{
-    width: 100%;
+
+  .dialog {
+    width: 600px;
     height: 100%;
-    color: map.get($color, white);
+    color: map.get($color, black);
+    background-color: map.get($color, white);
     border: map.get($color, black) 1px solid;
     border-radius: 20px;
   }
 }
+
 #motto-page {
   .main-area-hander {
     p {
@@ -185,6 +198,7 @@ const updateTime = () => {
     }
   }
 }
+
 #eat-page {
   .main-area-hander {
     p {

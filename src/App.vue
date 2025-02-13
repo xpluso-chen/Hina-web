@@ -163,6 +163,9 @@ function eatAgain() {
   // 對標題和按鈕的距離
   padding: map.get($interval, m);
   // 左右對齊標題
+  @include respond-to(sm){
+    width: 90%;
+  }
 }
 
 .againBtn {
@@ -171,6 +174,7 @@ function eatAgain() {
 }
 
 #index-page {
+  background-color: map.get($color,orange);
   .main-area-hander {
     // 置中today
     width: 400px;
@@ -245,6 +249,21 @@ function eatAgain() {
 }
 
 #joke-page {
+  background-color: hsla(178, 38%, 56%, 0.8);
+  position: relative; // 讓偽元素參考這個區塊定位
+  
+  &::after {
+    content: "";
+    position: absolute; // 讓它能覆蓋父元素
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block; // 讓偽元素佔滿區域
+    background-image: url("/Hina-web/bg-joke.png");
+    background-repeat: repeat;
+    z-index: -1; // 讓背景圖片疊在顏色之下
+  }
   .main-area-hander {
     span {
       /* 設置文字描邊*/
@@ -256,6 +275,7 @@ function eatAgain() {
 }
 
 #motto-page {
+  background-color: map.get($color, yellow);
   .main-area-hander {
     span {
       /* 設置文字描邊*/
@@ -266,6 +286,7 @@ function eatAgain() {
 }
 
 #eat-page {
+  background-color: map.get($color, perple);
   .main-area-hander {
     height: 24vh;
     span {
@@ -285,6 +306,7 @@ function eatAgain() {
       @include respond-to(sm) {
         overflow: hidden;
         // 讓星星超過頁面時消失
+        height: 70vh;
       }
 
       .star-box {

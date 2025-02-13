@@ -288,8 +288,8 @@ function eatAgain() {
       }
 
       .star-box {
-        width: 100%;
-        height: 400px;
+        width: 360px;
+        height: 360px;
         background-image: url("/Hina-web/Star-pink.svg");
         background-repeat: no-repeat;
         position: relative;
@@ -303,14 +303,9 @@ function eatAgain() {
 
         .eat-text {
           position: absolute;
-          top: 150px;
-          left: 150px;
+          top: 156px;
+          left: 0px;
           z-index: 5;
-
-          @include respond-to(sm) {
-            top: 150px;
-            left: 150px;
-          }
         }
       }
 
@@ -325,7 +320,7 @@ function eatAgain() {
         z-index: 5;
 
         @include respond-to(sm) {
-          top: -160px;
+          top: -120px;
           left: 20px;
         }
       }

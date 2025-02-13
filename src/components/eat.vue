@@ -34,9 +34,16 @@ defineExpose({ eatAgain });
 
 <style lang="scss" scoped>
 @use "sass:map";
-p {
+div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    // 確保星星中的P不管長短都在星星中間
+    p {
       /* 設置文字描邊*/
       @extend %text-outline-stroke;
       @include title-style(map.get($color, orange));
     }
+}
+
 </style>

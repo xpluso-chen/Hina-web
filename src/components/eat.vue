@@ -31,3 +31,12 @@ function eatAgain(){
 defineExpose({ eatAgain });
 
 </script>
+
+<style lang="scss" scoped>
+@use "sass:map";
+p {
+      /* 設置文字描邊*/
+      @extend %text-outline-stroke;
+      @include title-style(map.get($color, orange));
+    }
+</style>

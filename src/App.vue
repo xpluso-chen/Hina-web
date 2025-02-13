@@ -1,4 +1,5 @@
 <template>
+  <!-- 首頁 -->
   <section id="index-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
@@ -32,8 +33,7 @@
       <!-- 留白用 -->
     </div>
   </section>
-
-
+  <!-- 冷笑話頁 -->
   <section id="joke-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
@@ -58,7 +58,7 @@
       <!-- 留白用 -->
     </div>
   </section>
-
+  <!-- 雞湯頁 -->
   <section id="motto-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
@@ -83,7 +83,7 @@
       <!-- 留白用 -->
     </div>
   </section>
-
+  <!-- 吃吃頁 -->
   <section id="eat-page">
     <div class="left-area"></div>
     <div class="right-area"></div>
@@ -91,12 +91,20 @@
       <!-- 標題 -->
       <span>肚子餓了嗎?</span>
       <span>幫你想一下吃什麼</span>
-      <Button @click="eatAgain" :bgColor="colorMap.orange" :hoverColor="colorMap.orangeHover" text="我需要再一碗"
+      <Button @click="eatAgain" :bgColor="colorMap.deepYellow" :hoverColor="colorMap.deepYellowHover" text="再想一個"
         imgSrc="/Hina-web/hand-r.png" class="nohands" />
 
     </div>
     <div class="main-area-content">
-      <Eat ref="eatComponent" />
+      <div class="eat-page-content">
+        <div class="star-box">
+          <Eat ref="eatComponent" class="eat-text" />
+        </div>
+        <div class="magican-box">
+
+        </div>
+      </div>
+
 
     </div>
     <div class="main-area-footer">
@@ -259,11 +267,70 @@ function eatAgain() {
 
 #eat-page {
   .main-area-hander {
+    height: 24vh;
     span {
       /* 設置文字描邊*/
       @extend %text-outline-stroke;
       @include title-style(map.get($color, yellow));
     }
   }
+
+  .main-area-content {
+    padding: 0;
+    
+    .eat-page-content {
+      width: 100%;
+      height: 60vh;
+
+      @include respond-to(sm) {
+        overflow: hidden;
+        // 讓星星超過頁面時消失
+      }
+
+      .star-box {
+        width: 100%;
+        height: 400px;
+        background-image: url("/Hina-web/Star-pink.svg");
+        background-repeat: no-repeat;
+        position: relative;
+        top: 20px;
+        left: 300px;
+
+        @include respond-to(sm) {
+          top: 20px;
+          left: 120px;
+        }
+
+        .eat-text {
+          position: absolute;
+          top: 150px;
+          left: 150px;
+          z-index: 5;
+
+          @include respond-to(sm) {
+            top: 150px;
+            left: 150px;
+          }
+        }
+      }
+
+      .magican-box {
+        width: 200px;
+        height: 240px;
+        background-image: url("/Hina-web/magician1.svg");
+        background-repeat: no-repeat;
+        position: relative;
+        top: -120px;
+        left: 20px;
+        z-index: 5;
+
+        @include respond-to(sm) {
+          top: -160px;
+          left: 20px;
+        }
+      }
+    }
+  }
+
 }
 </style>

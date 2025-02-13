@@ -1,7 +1,7 @@
 <template>
   <div class="btn-box">
     <img class="handOnleft-img" :src="imgSrc" alt="裝飾左邊用的手">
-    <button class="btn" ref="btn" :style="{ '--bg-color': bgColor, '--hover-color': hoverColor }" @click="toggleClass">
+    <button class="btn" :class="{ active: isActive }"  :style="{ '--bg-color': bgColor, '--hover-color': hoverColor }" @click="toggleClass">
       <span>{{ text }}</span>
     </button>
     <img class="handOnRight-img" :src="imgSrc" alt="裝飾右邊用的手">
@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick, defineProps } from 'vue';
+import { ref,  defineProps } from 'vue';
 
 defineProps({
   bgColor: { type: String },
@@ -19,13 +19,12 @@ defineProps({
 });
 
 const btn = ref<HTMLElement | null>(null);
-
+const isActive = ref(false);
 function toggleClass() {
-  nextTick(() => {
-    if (btn.value) {
-      btn.value.classList.toggle('active');
-    }
-  });
+  isActive.value = true; // 每次點擊時都加上 active
+  setTimeout(() => {
+    isActive.value = false; // 短暫顯示 active 後自動移除
+  }, 2000); // 控制 active 顯示的時間
 }
 </script>
 

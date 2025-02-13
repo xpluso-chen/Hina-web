@@ -40,7 +40,7 @@
 // 按鈕效果->點擊會晃動
 .active {
     animation: rotate 0.7s ease-in-out both;
-
+    transition: all 1.5s linear;
     span {
         animation: storm 0.7s ease-in-out both;
         animation-delay: 0.06s;

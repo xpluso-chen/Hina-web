@@ -163,9 +163,6 @@ function eatAgain() {
   // 對標題和按鈕的距離
   padding: map.get($interval, m);
   // 左右對齊標題
-  @include respond-to(sm){
-    width: 90%;
-  }
 }
 
 .againBtn {
@@ -177,7 +174,6 @@ function eatAgain() {
   background-color: map.get($color,orange);
   .main-area-hander {
     // 置中today
-    width: 400px;
     align-items: center;
 
     .today {
@@ -297,7 +293,7 @@ function eatAgain() {
   }
 
   .main-area-content {
-    padding: 0;
+    padding: unset;
     
     .eat-page-content {
       width: 100%;

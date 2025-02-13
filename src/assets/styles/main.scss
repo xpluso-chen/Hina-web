@@ -76,12 +76,12 @@ section {
     gap: 8px;
   }
   .main-area-hander {
-    width: 400px;
+    width: calc(400px - map.get($interval, l));
     padding: 0 map.get($interval, l);
   // 標題左右對齊.dialog.againBtn
   }
   .main-area-content {
-    width: 400px;
+    width:calc(400px - map.get($interval, l));
     padding:map.get($interval, m);
   }
 }

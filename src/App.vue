@@ -14,13 +14,18 @@
 
       <div class="content-box">
         <CountyTemperature id="countyTemperature" />
-        <Button id="btn1" link="#joke-page" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱"
-          imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
-        
-        <Button id="btn2" link="#motto-page" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
-          imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
-        <Button id="btn3" link="#eat-page" :bgColor="colorMap.green" :hoverColor="colorMap.greenHover" text="我覺得肚子餓了"
-          imgSrc="/Hina-web/hand-l.png" class="handOnleft" />
+        <a href="#joke-page">
+          <Button id="btn1" :bgColor="colorMap.pink" :hoverColor="colorMap.pinkHover" text="我覺得天氣有點熱"
+            imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
+        </a>
+        <a href="#motto-page">
+          <Button id="btn2" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="我覺得天氣有點冷"
+            imgSrc="/Hina-web/hand-r.png" class="handOnRight" />
+        </a>
+        <a href="#eat-page">
+          <Button id="btn3" :bgColor="colorMap.green" :hoverColor="colorMap.greenHover" text="我覺得肚子餓了"
+            imgSrc="/Hina-web/hand-l.png" class="handOnleft" />
+        </a>
       </div>
     </div>
     <div class="main-area-footer">
@@ -87,12 +92,12 @@
       <span>肚子餓了嗎?</span>
       <span>幫你想一下吃什麼</span>
       <Button @click="eatAgain" :bgColor="colorMap.orange" :hoverColor="colorMap.orangeHover" text="我需要再一碗"
-          imgSrc="/Hina-web/hand-r.png" class="nohands" />
-     
+        imgSrc="/Hina-web/hand-r.png" class="nohands" />
+
     </div>
     <div class="main-area-content">
-<Eat ref="eatComponent" />
-      
+      <Eat ref="eatComponent" />
+
     </div>
     <div class="main-area-footer">
       <!-- 留白用 -->
@@ -151,7 +156,8 @@ function eatAgain() {
   padding: map.get($interval, m);
   // 左右對齊標題
 }
-.againBtn{
+
+.againBtn {
   padding: 0 map.get($interval, m);
   // 左右對齊標題
 }
@@ -176,56 +182,57 @@ function eatAgain() {
       }
     }
   }
- 
-  .main-area-content{
- @extend %flex-column-center;
-  .content-box {
-    // 網頁版->邊角圓,填色
-    width: 400px;
-    height: 400px;
-    position: relative;
-    background-color: #EFE2C0;
-    border-radius: 50%;
-    padding-top: map.get($interval, l);
-    padding-bottom: map.get($interval, xl);
-    background-color: map.get($color, yellow);
-    border-radius: 50%;
+
+  .main-area-content {
     @extend %flex-column-center;
 
-    #btn1 {
-      position: absolute;
-      top: 200px;
-      left: -300px;
-    }
+    .content-box {
+      // 網頁版->邊角圓,填色
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background-color: #EFE2C0;
+      border-radius: 50%;
+      padding-top: map.get($interval, l);
+      padding-bottom: map.get($interval, xl);
+      background-color: map.get($color, yellow);
+      border-radius: 50%;
+      @extend %flex-column-center;
 
-    #btn2 {
-      position: absolute;
-      top: 60px;
-      right: -300px;
-    }
-
-    #btn3 {
-      position: absolute;
-      bottom: -60px;
-      left: -50px;
-    }
-
-    // 手機版->不邊角圓,不填色
-    @include respond-to(sm) {
-      width: 100%;
-      height: auto;
-      padding: 0 0;
-      background-color: unset;
-      border-radius: unset;
-
-      #btn1,
-      #btn2,
-      #btn3 {
-        position: unset;
+      #btn1 {
+        position: absolute;
+        top: 200px;
+        left: -300px;
       }
-    }
 
-  }
+      #btn2 {
+        position: absolute;
+        top: 60px;
+        right: -300px;
+      }
+
+      #btn3 {
+        position: absolute;
+        bottom: -60px;
+        left: -50px;
+      }
+
+      // 手機版->不邊角圓,不填色
+      @include respond-to(sm) {
+        width: 100%;
+        height: auto;
+        padding: 0 0;
+        background-color: unset;
+        border-radius: unset;
+
+        #btn1,
+        #btn2,
+        #btn3 {
+          position: unset;
+        }
+      }
+
+    }
   }
 }
 

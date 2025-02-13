@@ -53,6 +53,9 @@ function showAns() {
     }
     hr{
         border: map.get($color, black) 1.5px solid;
+        @include respond-to(sm){
+            border: map.get($color, black) 0.5px solid;
+        }
     }
     
 }

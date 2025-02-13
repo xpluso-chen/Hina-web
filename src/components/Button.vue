@@ -18,7 +18,7 @@ defineProps({
   imgSrc: { type: String }
 });
 
-const btn = ref<HTMLElement | null>(null);
+
 const isActive = ref(false);
 function toggleClass() {
   isActive.value = true; // 每次點擊時都加上 active

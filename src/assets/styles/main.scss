@@ -72,12 +72,14 @@ section {
     grid-template-rows: repeat(3, auto);
   }
   .main-area-hander {
-    width: calc(400px - map.get($interval, l));
+    width: 100%;
+    // width: calc(400px - map.get($interval, l));
     padding: 0 map.get($interval, l);
   // 標題左右對齊.dialog.againBtn
   }
   .main-area-content {
-    width:calc(400px - map.get($interval, l));
+    width: 100%;
+    // width:calc(400px - map.get($interval, l));
     padding:map.get($interval, m);
   }
 }

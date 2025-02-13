@@ -224,6 +224,15 @@ function eatAgain() {
         bottom: -60px;
         left: -50px;
       }
+      @include respond-to(md){
+        #btn1 {
+        left: -210px;
+      }
+
+      #btn2 {
+        right: -200px;
+      }
+      }
 
       // 手機版->不邊角圓,不填色
       @include respond-to(sm) {
@@ -271,6 +280,7 @@ function eatAgain() {
 }
 
 #motto-page {
+
   background-color: map.get($color, yellow);
   .main-area-hander {
     span {
@@ -298,10 +308,10 @@ function eatAgain() {
     .eat-page-content {
       width: 100%;
       height: 60vh;
-
-      @include respond-to(sm) {
+      
+      @include respond-to(xs) {
         overflow: hidden;
-        // 讓星星超過頁面時消失
+        // 手機版讓星星超過頁面時消失
         height: 70vh;
       }
 

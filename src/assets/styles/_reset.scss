@@ -11,8 +11,10 @@
 /* 重置字體 */
 body {
     font-family:
+        /*自訂義*/
+        "Noto Sans TC", 
+        
         /*英文*/
-        "Zen Kaku Gothic New", 
         serif,
         -apple-system,
         BlinkMacSystemFont,
@@ -29,10 +31,12 @@ body {
         "Heiti TC",
         "微軟正黑體",
         "Microsoft JhengHei",
-        "Noto Sans TC",
         sans-serif;
     font-size: 100%;
     line-height: 1.5;
+    
+  font-weight: 500;
+  font-style: normal;
 }
 
 /*     重置標題 */

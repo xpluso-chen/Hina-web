@@ -35,7 +35,9 @@
       <p>標題標題標題標題標題標題標題標題</p>
     </div>
     <div class="main-area-content">
+<div class="dialog">
 
+</div>
     </div>
     <div class="main-area-footer">
       <!-- 留白用 -->
@@ -95,6 +97,7 @@ const updateTime = () => {
 #index-page {
   .main-area-hander {
     // 置中today
+    width: 400px;
     align-items: center;
 
     .today {
@@ -134,7 +137,7 @@ const updateTime = () => {
     #btn2 {
       position: absolute;
       top: 60px;
-      right: -400px;
+      right: -300px;
     }
 
     #btn3 {
@@ -144,7 +147,7 @@ const updateTime = () => {
     }
 
     // 手機版->不邊角圓,不填色
-    @media (max-width: 768px) {
+    @include respond-to(sm) {
       width: 100%;
       height: auto;
       padding: 0 0;
@@ -166,6 +169,13 @@ const updateTime = () => {
     p {
       @include title-style(map.get($color, orange));
     }
+  }
+  .dialog{
+    width: 100%;
+    height: 100%;
+    color: map.get($color, white);
+    border: map.get($color, black) 1px solid;
+    border-radius: 20px;
   }
 }
 #motto-page {

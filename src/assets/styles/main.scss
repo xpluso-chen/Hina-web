@@ -4,6 +4,7 @@
 @use "./mixins" as *;
 @use"./extend.scss" as *;
 @use"./animations.scss" as *;
+@use"./breakpoint" as *;
 
 @use "./buttons" as *;
 @use "./component" as *;
@@ -35,7 +36,8 @@ section {
 
 .main-area-hander {
   // 統一貼地
-  width: 400px;
+  width: 600px;
+  padding:0 map.get($interval, m);
   @extend %column-down;
   grid-column-start: 2;
   grid-row-start: 1;
@@ -43,7 +45,7 @@ section {
 }
 
 .main-area-content {
-  width: 400px;
+  width: 600px;
   @extend %flex-column-center;
   position: relative;
   grid-column-start: 2;
@@ -56,7 +58,7 @@ section {
   background-color:aqua
 }
 
-@media (max-width: 768px) {
+@include respond-to(sm) {
 
   /* 手機板 */
   .left-area,
@@ -71,5 +73,12 @@ section {
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
     gap: 8px;
+  }
+  .main-area-hander {
+    width: 400px;
+  }
+  .main-area-content {
+    width: 400px;
+    padding:map.get($interval, m);
   }
 }

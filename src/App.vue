@@ -293,6 +293,10 @@ function eatAgain() {
 
 #eat-page {
   background-color: map.get($color, perple);
+  @include respond-to(xs) {
+    grid-template-columns: repeat(1, auto);
+  }
+  
   .main-area-hander {
     height: 24vh;
     span {
@@ -308,11 +312,15 @@ function eatAgain() {
     .eat-page-content {
       width: 100%;
       height: 60vh;
-      
+      @include respond-to(md){
+        margin-top: 20vh;
+        height: auto;
+      }
       @include respond-to(xs) {
         overflow: hidden;
         // 手機版讓星星超過頁面時消失
         height: 70vh;
+        margin-top: 0vh;
       }
 
       .star-box {
@@ -324,9 +332,17 @@ function eatAgain() {
         top: 20px;
         left: 300px;
 
+        @include respond-to(md) {
+          top: -120px;
+          left: 240px;
+        }
         @include respond-to(sm) {
-          top: 20px;
+          // top: 20px;
           left: 120px;
+        }
+        @include respond-to(xs) {
+          top: 20px;
+          
         }
 
         .eat-text {

@@ -125,7 +125,6 @@ import Motto from './components/motto.vue';
 import Joke from './components/joke.vue';
 import Eat from './components/eat.vue';
 import Button from './components/Button.vue';
-import RunText from './components/runText.vue';
 
 // 抓現在時間
 import { ref } from "vue";

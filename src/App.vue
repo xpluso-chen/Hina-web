@@ -293,10 +293,6 @@ function eatAgain() {
 
 #eat-page {
   background-color: map.get($color, perple);
-  @include respond-to(xs) {
-    grid-template-columns: repeat(1, auto);
-  }
-  
   .main-area-hander {
     height: 24vh;
     span {

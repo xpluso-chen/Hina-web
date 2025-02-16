@@ -21,13 +21,13 @@ section {
 
 /* 左側裝飾區 */
 .left-area {
-  // background-color: map.get($color, deepYellow);
+  background-color: map.get($color, deepYellow);
   grid-row: span 3 / span 3;
 }
 
 /* 右側裝飾區 */
 .right-area {
-  // background-color: map.get($color, deepYellow);
+  background-color: map.get($color, deepYellow);
   grid-row: span 3 / span 3;
   grid-column-start: 3;
   grid-row-start: 1;
@@ -36,7 +36,7 @@ section {
 .main-area-hander {
   // 統一貼地
   width: 600px;
-  padding:0 map.get($interval, m);
+  padding: 0 map.get($interval, m);
   @extend %column-down;
   grid-column-start: 2;
   grid-row-start: 1;
@@ -68,18 +68,32 @@ section {
   }
 
   section {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(1, auto);
+    // grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
   }
+
   .main-area-hander {
-    width: 100%;
-    // width: calc(400px - map.get($interval, l));
-    padding: 0 map.get($interval, l);
-  // 標題左右對齊.dialog.againBtn
+    width: 90vw;
+    padding: 0 map.get($interval, xl);
+    // 標題左右對齊.dialog.againBtn
   }
+
   .main-area-content {
-    width: 100%;
-    // width:calc(400px - map.get($interval, l));
-    padding:map.get($interval, m);
-  }
+    width: 90vw;
+    padding: map.get($interval, m) map.get($interval, l);
 }
+}
+
+// @include respond-to(xs) {
+//   .main-area-hander {
+
+//     width: calc(400px - map.get($interval, l));
+//     padding: 0 map.get($interval, l);
+//   // 標題左右對齊.dialog.againBtn
+//   }
+//   .main-area-content {
+//     width:calc(400px - map.get($interval, l));
+//     padding:map.get($interval, m);
+//   }
+// }

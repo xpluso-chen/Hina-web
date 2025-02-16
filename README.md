@@ -8,6 +8,12 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 # Hina-web
 >>>>>>> 8426e19f0f06430e5a310b3e03c9631d6889ed20
 
+備註:
+1.電腦版時，中間區域大小定width: 600px;
+直立平板及手機版，中間區域 width: 90vw;
+    padding: map.get($interval, m) map.get($interval, l);
+->因為直立平板及手機版把左右區塊(裝飾區)都關掉了，只剩中區塊，用padding製造裝飾區(空白空間)
+
 做這個網站後知道的幾件事:
 1.字要加框很難加
 2.子組件可以包子組件
@@ -17,3 +23,4 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 有時間再做:
 1.吃吃頁的文字跑馬燈+星星轉轉+魔法師效果+海南雞晚點再出現
 2.首頁按鈕漂浮
+

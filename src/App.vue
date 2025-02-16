@@ -334,18 +334,23 @@ function eatAgain() {
         }
         @include respond-to(sm) {
           // top: 20px;
-          left: 120px;
+          left: 100px;
         }
         @include respond-to(xs) {
           top: 20px;
-          
+        }
+        @include respond-to(xxxs) {
+          left: 0px;
         }
 
         .eat-text {
           position: absolute;
           top: 156px;
-          left: 0px;
-          z-index: 5;
+          left: 10px;
+          z-index: 3;
+          @include respond-to (xs){
+            left: 0px;
+          }
         }
       }
 
@@ -361,7 +366,7 @@ function eatAgain() {
 
         @include respond-to(sm) {
           top: -120px;
-          left: 20px;
+          left: 8px;
         }
       }
     }

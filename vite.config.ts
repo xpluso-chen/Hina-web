@@ -14,6 +14,7 @@ export default defineConfig({
         @use "/src/assets/styles/extend.scss" as *;
         @use "/src/assets/styles/buttons.scss" as *;
         @use "/src/assets/styles/breakpoint.scss" as *;
+        @use "/src/assets/styles/animations.scss" as *;
         `
 
       }

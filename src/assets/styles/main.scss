@@ -21,13 +21,13 @@ section {
 
 /* 左側裝飾區 */
 .left-area {
-  background-color: map.get($color, deepYellow);
+  // background-color: map.get($color, deepYellow);
   grid-row: span 3 / span 3;
 }
 
 /* 右側裝飾區 */
 .right-area {
-  background-color: map.get($color, deepYellow);
+  // background-color: map.get($color, deepYellow);
   grid-row: span 3 / span 3;
   grid-column-start: 3;
   grid-row-start: 1;

@@ -7,5 +7,5 @@
 </script>
 
 <style lang="scss" scoped>
-
+@use "sass:map";
 </style>

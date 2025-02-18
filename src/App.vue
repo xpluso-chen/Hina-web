@@ -87,6 +87,7 @@
   </section>
   <!-- 吃吃頁 -->
   <section id="eat-page">
+
     <div class="left-area">
     </div>
     <div class="right-area">
@@ -284,9 +285,11 @@ function eatAgain() {
 }
 
 #eat-page {
-  background-color: map.get($color, perple);
+  // background-color: map.get($color, perple);
   @include bg-color(map-get($color,bg-perple),"/Hina-web/bg-eat.png");
-  
+  @include respond-to(xs) {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .main-area-hander {
     height: 24vh;
     span {
@@ -328,10 +331,11 @@ function eatAgain() {
         }
         @include respond-to(sm) {
           // top: 20px;
-          left: 100px;
+          left: 200px;
         }
         @include respond-to(xs) {
           top: 20px;
+          left: 100px;
         }
         @include respond-to(xxxs) {
           left: 0px;
@@ -359,6 +363,10 @@ function eatAgain() {
         z-index: 5;
 
         @include respond-to(sm) {
+          top: -120px;
+          left: 80px;
+        }
+        @include respond-to(xs) {
           top: -120px;
           left: 8px;
         }

@@ -61,7 +61,7 @@
   <!-- 雞湯頁 -->
   <section id="motto-page">
     <div class="left-area">
-      
+
     </div>
     <div class="right-area"></div>
     <div class="main-area-hander">
@@ -102,8 +102,8 @@
     </div>
     <div class="main-area-content">
       <div class="eat-page-content">
-        <div class="star-box">
-          <Eat ref="eatComponent" class="eat-text" />
+        <div class="star-box" :class="{ active2: eatActiveToggle }">
+          <Eat ref="eatComponent" class="eat-text" v-if="showEat" />
         </div>
         <div class="magican-box">
 
@@ -145,10 +145,23 @@ const mottoComponent = ref(null);
 function mottoAgain() {
   mottoComponent.value?.mottoAgain();
 }
+
 // 抓eat.vue的jokeAgain()
 const eatComponent = ref(null);
+const eatActiveToggle = ref(false); // 控制 star-box 是否旋轉
+const showEat = ref(true); // 控制 Eat 何時顯示(第一次先顯示
 function eatAgain() {
   eatComponent.value?.eatAgain();
+  eatActiveToggle.value = false;
+  showEat.value = false; // 星星轉動時先隱藏
+
+  setTimeout(() => {
+    eatActiveToggle.value = true; // 讓 star-box 旋轉
+  }, 10);
+
+  setTimeout(() => {
+    showEat.value = true; // 旋轉結束後顯示 Eat
+  }, 500); // 這個時間應該和 .rotate 動畫時間一致
 }
 
 
@@ -176,7 +189,8 @@ function eatAgain() {
 }
 
 #index-page {
-  @include bg-color(map-get($color,bg-orange),"/Hina-web/bg-index.png");
+  @include bg-color(map-get($color, bg-orange), "/Hina-web/bg-index.png");
+
   .main-area-hander {
     // 置中today
     align-items: center;
@@ -229,14 +243,15 @@ function eatAgain() {
         bottom: -60px;
         left: -50px;
       }
-      @include respond-to(md){
-        #btn1 {
-        left: -210px;
-      }
 
-      #btn2 {
-        right: -200px;
-      }
+      @include respond-to(md) {
+        #btn1 {
+          left: -210px;
+        }
+
+        #btn2 {
+          right: -200px;
+        }
       }
 
       // 手機版->不邊角圓,不填色
@@ -260,8 +275,8 @@ function eatAgain() {
 
 #joke-page {
   position: relative; // 讓偽元素參考這個區塊定位
-  @include bg-color(map-get($color,bg-ttiffany),"/Hina-web/bg-joke.png");
-  
+  @include bg-color(map-get($color, bg-ttiffany), "/Hina-web/bg-joke.png");
+
   .main-area-hander {
     span {
       /* 設置文字描邊*/
@@ -273,7 +288,8 @@ function eatAgain() {
 }
 
 #motto-page {
-  @include bg-color(map-get($color,bg-yellow),"/Hina-web/bg-motto.png");
+  @include bg-color(map-get($color, bg-yellow), "/Hina-web/bg-motto.png");
+
   // background-color: map.get($color, yellow);
   .main-area-hander {
     span {
@@ -286,12 +302,15 @@ function eatAgain() {
 
 #eat-page {
   // background-color: map.get($color, perple);
-  @include bg-color(map-get($color,bg-perple),"/Hina-web/bg-eat.png");
+  @include bg-color(map-get($color, bg-perple), "/Hina-web/bg-eat.png");
+
   @include respond-to(xs) {
     grid-template-columns: repeat(1, 1fr);
   }
+
   .main-area-hander {
     height: 24vh;
+
     span {
       /* 設置文字描邊*/
       @extend %text-outline-stroke;
@@ -301,14 +320,16 @@ function eatAgain() {
 
   .main-area-content {
     padding: unset;
-    
+
     .eat-page-content {
       width: 100%;
       height: 60vh;
-      @include respond-to(md){
+
+      @include respond-to(md) {
         margin-top: 20vh;
         height: auto;
       }
+
       @include respond-to(xs) {
         overflow: hidden;
         // 手機版讓星星超過頁面時消失
@@ -325,18 +346,31 @@ function eatAgain() {
         top: 20px;
         left: 300px;
 
+        // 旋轉動畫
+        &.active2 {
+          animation: rotation 0.9s ease-in-out;
+          transition: all 1.5s linear;
+          // 旋轉時讓 .eat-text 消失
+          .eat-text {
+            opacity: 0;
+          }
+        }
+
         @include respond-to(md) {
           top: -120px;
           left: 240px;
         }
+
         @include respond-to(sm) {
           // top: 20px;
           left: 200px;
         }
+
         @include respond-to(xs) {
           top: 20px;
           left: 100px;
         }
+
         @include respond-to(xxxs) {
           left: 0px;
         }
@@ -346,10 +380,14 @@ function eatAgain() {
           top: 156px;
           left: 10px;
           z-index: 3;
-          @include respond-to (xs){
+          opacity: 1;
+          animation: fadeIn 0.3s ease-in-out 0.5s forwards;
+
+          @include respond-to (xs) {
             left: 0px;
           }
         }
+
       }
 
       .magican-box {
@@ -366,6 +404,7 @@ function eatAgain() {
           top: -120px;
           left: 80px;
         }
+
         @include respond-to(xs) {
           top: -120px;
           left: 8px;

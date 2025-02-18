@@ -1,11 +1,11 @@
 <template>
-    <div>
+
         <div>
             <!-- 白框 -->
             <p v-if="random.eat" v-html="random.eat"></p>
         </div>
         <!-- <button @click="eatAgain">我需要再一碗</button> -->
-    </div>
+
 </template>
 
 <script setup lang="ts">

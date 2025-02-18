@@ -20,6 +20,7 @@
         transform: rotate(0deg) translate3d(0, 0, 0);
     }
 }
+
 // 按鈕內字的震動效果
 @keyframes storm {
     0% {
@@ -57,6 +58,7 @@
         transform: translateX(0);
     }
 }
+
 //手指圖片戳戳-右
 @keyframes moveLeftAndRight {
     0% {
@@ -69,5 +71,27 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+// 自轉一圈
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//淡入
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }

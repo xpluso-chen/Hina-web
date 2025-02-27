@@ -105,7 +105,7 @@
         <div class="star-box" :class="{ active2: eatActiveToggle }">
           <Eat ref="eatComponent" class="eat-text" v-if="showEat" />
         </div>
-        <div class="magican-box">
+        <div class="magican-box" :class="{ active3: eatActiveToggle }">
 
         </div>
       </div>
@@ -393,12 +393,18 @@ function eatAgain() {
       .magican-box {
         width: 200px;
         height: 240px;
-        background-image: url("/Hina-web/magician1.svg");
+        background-image: url("/Hina-web/magician2.svg");
         background-repeat: no-repeat;
         position: relative;
         top: -120px;
         left: 20px;
         z-index: 5;
+        &.active3 {
+          background-image: url("/Hina-web/magician1.svg");
+          // transition: all 0.3s linear;
+          // 漸變的效果很奇怪
+          transition-delay: 250ms;
+        }
 
         @include respond-to(sm) {
           top: -120px;

@@ -26,7 +26,7 @@ const randomIndex = ref<number | null>(null); // 用來記錄當前的索引
 
 //初始化時的動作  
 onMounted(async () => {
-    const response = await fetch("/Hina-web/json/joke.json");
+    const response = await fetch(`/Hina-web/json/joke.json?t=${new Date().getTime()}`);
     users.value = await response.json();
     // console.log(users.value);
     jokeAgain(); // 先顯示第一個問題

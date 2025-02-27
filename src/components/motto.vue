@@ -16,7 +16,7 @@ const random = reactive({ motto: "" }); // 只存隨機的 motto
 
 //初始化時的動作  
 onMounted(async () => {
-    const response = await fetch("/Hina-web/json/motto.json");
+    const response = await fetch(`/Hina-web/json/motto.json?t=${new Date().getTime()}`);
     users.value = await response.json();
     
     mottoAgain();

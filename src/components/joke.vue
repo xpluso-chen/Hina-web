@@ -1,17 +1,17 @@
 <template>
-    
-        <div class="joke-content">
-            <!-- 白框 -->
-            <p v-if="random.question" v-html="random.question"></p>
-            <hr>
-            <!-- <button @click="showAns">公布答案</button> -->
-            <Button id="showAns"  @click="showAns" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover" text="公布答案"
-                imgSrc="/Hina-web/hand-r.png" class="nohands"/>
-            <!-- 顯示答案 -->
-            <p v-if="random.ans" v-html="random.ans"></p>
-        </div>
-        <!-- <button @click="jokeAgain">不夠冷再一個</button> -->
-    
+
+    <div class="joke-content">
+        <!-- 白框 -->
+        <p v-if="random.question" v-html="random.question"></p>
+        <hr>
+        <!-- <button @click="showAns">公布答案</button> -->
+        <Button id="showAns" @click="showAns" :bgColor="colorMap.ttiffany" :hoverColor="colorMap.ttiffanyHover"
+            text="公布答案" imgSrc="/Hina-web/hand-r.png" class="nohands" />
+        <!-- 顯示答案 -->
+        <p v-if="random.ans" v-html="random.ans"></p>
+    </div>
+    <!-- <button @click="jokeAgain">不夠冷再一個</button> -->
+
 </template>
 
 <script setup lang="ts">
@@ -28,7 +28,7 @@ const randomIndex = ref<number | null>(null); // 用來記錄當前的索引
 onMounted(async () => {
     const response = await fetch("/Hina-web/json/joke.json");
     users.value = await response.json();
-
+    // console.log(users.value);
     jokeAgain(); // 先顯示第一個問題
 });
 
@@ -47,16 +47,19 @@ function showAns() {
 
 <style lang="scss" scoped>
 @use "sass:map";
-.joke-content{
-    p{
-        padding:map.get($interval, s) 0;
+
+.joke-content {
+    p {
+        padding: map.get($interval, s) 0;
     }
-    hr{
+
+    hr {
         border: map.get($color, black) 1.5px solid;
-        @include respond-to(sm){
+
+        @include respond-to(sm) {
             border: map.get($color, black) 0.5px solid;
         }
     }
-    
+
 }
 </style>
